@@ -8,7 +8,7 @@
 //
 // This key is meant to be public: Web3Forms only lets it send enquiries to your own email.
 window.LR_FORM_CONFIG = {
-  web3formsAccessKey: '',
+  web3formsAccessKey: '50f7185b-40ad-4730-bdd2-d790f49c7ad0',
   useHcaptcha: false,
   // shown as the email sender name and subject prefix
   siteName: 'La Rosa Website',
