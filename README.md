@@ -23,10 +23,10 @@ e.g. Hostinger → File Manager → `public_html`. Works on any static host
 WordPress site (`/who-we-are/`, `/services/`, …), so existing links and Google results keep working.
 
 ## Contact form
-The form posts to FormSubmit (`https://formsubmit.co`) and emails **info@larosatrading.com**.
-The very first submission sends a one-time activation email to that inbox — click
-"Activate" once and all later messages arrive normally. To use another address, change
-`ENDPOINT` in `contact-us/index.html`.
+The form sends enquiries through Web3Forms (https://web3forms.com), the same setup as the Uday Multiprint site.
+Create a free access key at web3forms.com for **info@larosatrading.com** and paste it into
+`assets/form-config.js` (`web3formsAccessKey`). Until a key is set, the form opens the
+visitor's email app instead, so no enquiry is lost.
 
 ## Preview locally
 ```

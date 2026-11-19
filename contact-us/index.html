@@ -483,7 +483,6 @@
   <div class="lr-cf-row"><label class="lr-cf-label" for="lr-cf-email">Email Address <span class="lr-cf-req">*</span></label><input class="lr-cf-input" type="email" id="lr-cf-email" name="email" autocomplete="email" required></div>
   <div class="lr-cf-row"><label class="lr-cf-label" for="lr-cf-phone">Phone Number</label><input class="lr-cf-input" type="tel" id="lr-cf-phone" name="phone" autocomplete="tel"></div>
   <div class="lr-cf-row"><label class="lr-cf-label" for="lr-cf-msg">Message</label><span class="lr-cf-desc"><span id="lrCfCount">0</span> / 180</span><textarea class="lr-cf-input lr-cf-ta" id="lr-cf-msg" name="message" maxlength="180"></textarea></div>
-  <input type="text" name="_honey" class="lr-cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
   <div class="lr-cf-row lr-cf-last"><button type="submit" class="lr-cf-btn">Submit</button><div class="lr-cf-msg" role="alert" aria-live="polite"></div></div>
 </form>
 <style>
@@ -504,34 +503,8 @@
   .lr-cf-msg:empty { display: none; }
   .lr-cf-msg.ok { color: #15803d; } .lr-cf-msg.err { color: #e51919; }
 </style>
-<script>
-(function () {
-  // Submissions are emailed via FormSubmit; the first one sends a one-time activation link to this address.
-  var ENDPOINT = 'https://formsubmit.co/ajax/info@larosatrading.com';
-  var form = document.getElementById('lrContactForm');
-  var msg = form.querySelector('.lr-cf-msg'), btn = form.querySelector('.lr-cf-btn');
-  var ta = form.querySelector('#lr-cf-msg'), count = document.getElementById('lrCfCount');
-  ta.addEventListener('input', function () { count.textContent = ta.value.length; });
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var bad = [].filter.call(form.querySelectorAll('[required]'), function (el) {
-      var invalid = !el.value.trim() || !el.checkValidity();
-      el.classList.toggle('lr-cf-invalid', invalid);
-      return invalid;
-    });
-    if (bad.length) { msg.className = 'lr-cf-msg err'; msg.textContent = 'Please fill in your name and a valid email address.'; bad[0].focus(); return; }
-    var data = Object.fromEntries(new FormData(form));
-    data._subject = 'New enquiry from larosatrading.com';
-    data._template = 'table';
-    btn.disabled = true; msg.className = 'lr-cf-msg'; msg.textContent = 'Sending…';
-    fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) })
-      .then(function (r) { return r.json().then(function (j) { if (!r.ok || j.success === 'false' || j.success === false) throw new Error(j.message); }); })
-      .then(function () { form.reset(); count.textContent = '0'; msg.className = 'lr-cf-msg ok'; msg.textContent = 'Thank you! Your message has been sent. Our team will respond shortly.'; })
-      .catch(function () { msg.className = 'lr-cf-msg err'; msg.innerHTML = 'Sorry, something went wrong. Please email us at <a href="mailto:info@larosatrading.com">info@larosatrading.com</a>.'; })
-      .finally(function () { btn.disabled = false; });
-  });
-})();
-</script>
+<script src="/assets/form-config.js"></script>
+<script src="/assets/contact-form.js"></script>
             </div>
 
             <div class="lrs-ct-socials-wrap">
