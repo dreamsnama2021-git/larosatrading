@@ -1,7 +1,7 @@
 // Enquiry form settings (Contact page).
 //
-// 1. Create a free access key at https://web3forms.com (enter info@larosatrading.com, the email that
-//    should receive enquiries). The key is emailed to that inbox.
+// 1. Create a free access key at https://web3forms.com (enter larosatrading26@gmail.com, the email that
+//    should receive enquiries). The key is emailed to that inbox, and every enquiry goes there.
 // 2. Paste it between the quotes below and save this file.
 // 3. Optional, extra spam protection: turn on hCaptcha for this form in the Web3Forms dashboard,
 //    then set useHcaptcha to true. (Only switch it on in both places, or submissions will fail.)
@@ -13,5 +13,5 @@ window.LR_FORM_CONFIG = {
   // shown as the email sender name and subject prefix
   siteName: 'La Rosa Website',
   // used if the key is missing or the form can't be sent
-  fallbackEmail: 'info@larosatrading.com',
+  fallbackEmail: 'larosatrading26@gmail.com',
 };

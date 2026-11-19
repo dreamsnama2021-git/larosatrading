@@ -24,7 +24,7 @@ WordPress site (`/who-we-are/`, `/services/`, …), so existing links and Google
 
 ## Contact form
 The form sends enquiries through Web3Forms (https://web3forms.com), the same setup as the Uday Multiprint site.
-Create a free access key at web3forms.com for **info@larosatrading.com** and paste it into
+Enquiries go to **larosatrading26@gmail.com**: create a free access key at web3forms.com for that address and paste it into
 `assets/form-config.js` (`web3formsAccessKey`). Until a key is set, the form opens the
 visitor's email app instead, so no enquiry is lost.
 
